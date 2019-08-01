@@ -1,0 +1,38 @@
+<!doctype HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="vivid.css">
+	<script type="text/javascript" src="publisherFilter.js"></script>
+	<script type="text/javascript" src="dist/vivid.js"></script>
+	<script type="text/javascript" src="vividSorting.js"></script>
+	<script type="text/javascript" src="vividCsvExport.js"></script>
+</head>
+<body onLoad="vividLoad()">
+
+<div id="filter-section">
+	<div class = "filter-header">
+		Filters go here
+	</div>
+	<button class = "export-button" onClick="csvDownload()">
+		Export 
+	</button>	
+	<div class = "filter-box" id="name-filter">
+		<div class = "filter-box-title">
+			Name
+		</div>
+		<input type="text" onkeyup="nameFilter()" class="filter-text-input" id="name-filter-input" placeholder="Search by publisher..." >	
+	</div>		
+	<div class = "filter-box" id="publisher-filter">
+		<div class = "filter-box-title">
+			Publisher
+		</div>
+		<input type="text" onkeyup="publisherFilter()" class="filter-text-input" id="publisher-filter-input" placeholder="Search by publisher..." >	
+	</div>	
+</div>
+
+<div id="table_container">
+
+</div>
+
+</body>
+</html
