@@ -1,9 +1,11 @@
 #table_container {
 	overflow-x:auto;
+	position: relative;
 }
 
 table {
-	width: 150%;
+	left:;
+	width: 200%;
 	
 
 }
@@ -12,11 +14,23 @@ tr:hover {
 	background-color: #ddd;
 }
 
+tr {
+	padding: 2px;
+}
+
+#headerRow {
+	height: 38px;
+}
+
 th {
 	background-color: #ff08c2;
 	color: white;
-	font-weight: bold; 
-	height: 38px;
+	font-weight: bold;
+	width: 300px; 
+}
+
+#buttonSelectHeader {
+	width: 20px;
 }
 
 th:hover {
@@ -25,11 +39,18 @@ th:hover {
 
 #filter-section {
 	float: left;
-	width: 200px;
 }
 
 .filter-box {
-	width: 100%;
+	margin-top: 10px;
+	border: solid;
+	border-width: 2px;
+	border-color: black;
+	padding: 5px;
+}
+
+.filter-header{
+	height: 38px;
 }
 
 .export-button{
@@ -38,4 +59,10 @@ th:hover {
 	color: #ffffff;
 	background-color: #9fa8da;
 
+}
+
+.export-error{
+	color: red;
+	font-size: 10px;
+	margin-top: 5px;
 }

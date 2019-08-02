@@ -16,7 +16,12 @@
 	<button class = "export-button" onClick="csvDownload()">
 		Export 
 	</button>
-
+	<div class="export-error" id="more-than-5-exports" style="display: none">
+		You can only export up to 5 entries
+	</div>
+	<div class="export-error" id="no-exports-selected" style="display: none">
+		Please select an item to export
+	</div>	
 	<div class = "filter-box" id="name-filter">
 		<div class = "filter-box-title">
 			Name
