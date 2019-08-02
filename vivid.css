@@ -53,7 +53,7 @@ th:hover {
 	height: 38px;
 	font-size: 24px;
 	font-style: italic;
-	align: center;
+	text-align: center;
 }
 
 .export-button{
