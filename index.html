@@ -15,19 +15,82 @@
 	</div>
 	<button class = "export-button" onClick="csvDownload()">
 		Export 
-	</button>	
+	</button>
+
 	<div class = "filter-box" id="name-filter">
 		<div class = "filter-box-title">
 			Name
 		</div>
 		<input type="text" onkeyup="nameFilter()" class="filter-text-input" id="name-filter-input" placeholder="Search by publisher..." >	
-	</div>		
+	</div>	
+
 	<div class = "filter-box" id="publisher-filter">
 		<div class = "filter-box-title">
 			Publisher
 		</div>
 		<input type="text" onkeyup="publisherFilter()" class="filter-text-input" id="publisher-filter-input" placeholder="Search by publisher..." >	
+	</div>
+
+	<div class = "filter-box" id="start-pitching-date-filter">
+		<div class="filter-box-title">
+			Start Pitching Between
+		</div>
+		<input type="date" name="Start Pitching Date Start" id="startPitchingDateFilterStart" onInput="startDateFilter()">
+		<div class="inside-filter-box">
+			and
+		</div>	
+		<input type="date" name="Start Pitching Date End" id="startPitchingDateFilterEnd" onInput="startDateFilter()">		
 	</div>	
+
+	<div class = "filter-box" id="editorial-type-filter">
+		<div class="filter-box-title">
+			Editorial Type
+		</div>
+		<input type="checkbox" class="filter-box-checkbox" id="editorial-type-broadcast" name="Broadcast Editorial Checkbox" value="Broadcast" onInput="editorialFilter()">	Broadcast <br>
+		<input type="checkbox" class="filter-box-checkbox" id="editorial-type-digital" name="Digital Editorial Checkbox" value="Digital" onInput="editorialFilter()"> Digital <br>
+		<input type="checkbox" class="filter-box-checkbox" id="editorial-type-print" name="Print Editorial Checkbox" value="Print" onInput="editorialFilter()"> Print <br>
+	</div>	
+
+	<div class = "filter-box" id="vertical-type-filter">
+		<div class="filter-box-title">
+			Vertical &amp; Topics
+		</div>
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-advertising" name="Advertising Vertical Checkbox" value="Advertising" onInput="verticalFilter()">	Advertising &amp; Marketing <br>
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-beauty" name="Beauty Vertical Checkbox" value="Beauty" onInput="verticalFilter()"> Beauty <br>
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-business" name="Business Vertical Checkbox" value="Business" onInput="verticalFilter()"> Business &amp; Entrepreneurship <br>
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-current" name="Current Vertical Checkbox" value="Current" onInput="verticalFilter()"> Current Affairs <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-decor" name="Decor Vertical Checkbox" value="Decor" onInput="verticalFilter()"> Decor &amp; Arts <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-entertainment" name="Entertainment Vertical Checkbox" value="Entertainment" onInput="verticalFilter()"> Entertainment <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-gender" name="Gender Vertical Checkbox" value="Gender" onInput="verticalFilter()"> Gender / Race Interest <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-government" name="Government Vertical Checkbox" value="Government" onInput="verticalFilter()"> Government &amp; Policy <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-headline" name="Headline Vertical Checkbox" value="Headline" onInput="verticalFilter()"> Headline News <br>				
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-health" name="Health Vertical Checkbox" value="Health" onInput="verticalFilter()"> Health &amp; Wellness <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-legal" name="Legal Vertical Checkbox" value="Legal" onInput="verticalFilter()"> Legal <br>			
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-lifestyle" name="Lifestyle Vertical Checkbox" value="Lifestyle" onInput="verticalFilter()"> Lifestyle &amp; Culture <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-local" name="Local Vertical Checkbox" value="Local" onInput="verticalFilter()"> Local Interest <br>
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-media" name="Media Vertical Checkbox" value="Media" onInput="verticalFilter()"> Media <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-real-estate" name="Real Estate Vertical Checkbox" value="Real" onInput="verticalFilter()"> Real Estate <br>				
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-research" name="Researcj Vertical Checkbox" value="Research" onInput="verticalFilter()"> Research &amp; Analytics <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-retail" name="Retail Vertical Checkbox" value="Retail" onInput="verticalFilter()"> Retail &amp; Commerce <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-sports" name="Sports Vertical Checkbox" value="Sports" onInput="verticalFilter()"> Sports &amp; Gaming <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-technology" name="Technology Vertical Checkbox" value="Technology" onInput="verticalFilter()"> Technology &amp; Innovation <br>		
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-travel" name="Travel Vertical Checkbox" value="Travel" onInput="verticalFilter()"> Travel <br>	
+		<input type="checkbox" class="filter-box-checkbox" id="vertical-type-youth" name="Youth Vertical Checkbox" value="Youth" onInput="verticalFilter()"> Youth <br>		
+	</div>	
+
+	<div class="filter-box" id="tier-filter">
+		<div>
+			Tier
+		</div>	
+		<div>
+			<input type="checkbox" class="filter-box-checkbox" id="tier-1" name="Tier 1" value="1" onInput="tierFilter()"> 1 <br>
+			<input type="checkbox" class="filter-box-checkbox" id="tier-2" name="Tier 2" value="2" onInput="tierFilter()"> 2 <br>			
+			<input type="checkbox" class="filter-box-checkbox" id="tier-3" name="Tier 3" value="3" onInput="tierFilter()"> 3 <br>			
+			<input type="checkbox" class="filter-box-checkbox" id="tier-4" name="Tier 4" value="4" onInput="tierFilter()"> 4 <br>
+			<input type="checkbox" class="filter-box-checkbox" id="tier-5" name="Tier 5" value="5" onInput="tierFilter()"> 5 <br>			
+		</div>	
+	</div>	
+
 </div>
 
 <div id="table_container">
